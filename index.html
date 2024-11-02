@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" type="text/css" href="primary_style.css">
+<style>
+    /* Optional styling */
+    #secret-button {
+        display: none; /* Initially hide the button */
+        transition: background-color 0.3s ease;
+        margin: 0 auto; /* Center horizontally */
+        padding: 10px 20px;
+    }
+</style>
+</head>
+<body>
+    <h1>TODO LIST APP</h1>
+    <label>SIGN-IN</label>
+    <form name="f1" method="POST" action="homepage.php">
+        <b>USER ID:</b>
+        <input type="text" name="uid" id="uuid" required>
+        <b>PASSWORD:</b>
+        <input type="text" name="pwd" id="ppwd" required>
+        <input type="submit" value="Connect">
+        <p>if you don't have a account</p>
+        <a href="inscription.html">then create one</a>
+    </form>
+    <button id="secret-button" onclick="toAdmin()">Connect as Admininstrator</button>
+    <script> 
+        function toAdmin(){window.location.href = "admin.html";}
+        function checkCredentials() {
+        const uid = document.getElementById('uuid').value;
+        const password =document.getElementById('ppwd').value;
+        // Check if both UID and password match the required values
+        if (uid === '123456' && password === '123456') {
+            document.getElementById('secret-button').style.display = 'block'; // Show the button
+        } else {
+            document.getElementById('secret-button').style.display = 'none'; // Hide the button if conditions are not met
+        }
+    }
+    // Add event listeners to the input fields
+    document.getElementById('uuid').addEventListener('input', checkCredentials);
+    document.getElementById('ppwd').addEventListener('input', checkCredentials);
+    </script>
+</body>
+</html>

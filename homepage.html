@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take My Notes</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script>
+        function addNote() {
+            var noteText = document.getElementById('note-input').value;
+            if (noteText) {
+                var noteList = document.getElementById('note-list');
+                var newNote = document.createElement('li');
+                newNote.textContent = noteText;
+                noteList.appendChild(newNote);
+                document.getElementById('note-input').value = ''; 
+            }
+        }
+        function removeNote() {
+            var noteList = document.getElementById('note-list');
+            if (noteList.lastChild) {
+                noteList.removeChild(noteList.lastChild);
+            }
+        }
+
+        function logout() {
+            location.reload(); 
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Take My Notes</h1>
+        <button onclick="logout()">Logout</button>
+    </header>
+""
+    <section>
+        <h2>Your Notes</h2>
+        <ul id="note-list">
+        </ul>
+    </section>
+
+    <section>
+        <h2>Add a New Note</h2>
+        <input type="text" id="note-input" placeholder="Write your note here">
+        <button onclick="addNote()">Add Note</button>
+        <button onclick="removeNote()">Remove Last Note</button>
+    </section>
+</body>
+</html>

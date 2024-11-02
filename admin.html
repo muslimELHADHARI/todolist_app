@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page - Backup and Restore</title>
+    <link rel="stylesheet" type="text/css" href="vint.css"> <!-- Include your CSS file here -->
+</head>
+<body>
+    <header>
+        <h1>Administrator Page</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Backup Database</h2>
+            <form method="POST" action="backup.php">
+                <button type="submit">Backup Now</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Restore Database</h2>
+            <form method="POST" action="restore.php" enctype="multipart/form-data">
+                <label for="backup-file">Select Backup File:</label>
+                <input type="file" name="backup-file" id="backup-file" accept=".sql" required>
+                <button type="submit">Restore Now</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

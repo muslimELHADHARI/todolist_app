@@ -1,0 +1,132 @@
+/* General Styling */
+body {
+    background-color: #f4ecd8; /* Vintage paper-like background */
+    font-family: 'Courier New', Courier, monospace; /* Vintage typewriter font */
+    color: #4d3d29;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #3e2723;
+    padding: 20px;
+    color: #fff3e0;
+    border-bottom: 5px solid #5d4037;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 3em;
+    letter-spacing: 2px;
+    font-weight: bold;
+    animation: fadeInDown 1s ease-out;
+}
+
+header h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+button,input[type="submit"] {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #6d4c41;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #8d6e63;
+}
+
+section {
+    margin-top: 30px;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1.1em;
+    border: 2px solid #6d4c41;
+    border-radius: 5px;
+    width: 60%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+#note-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+#note-list li {
+    background-color: #fff3e0;
+    padding: 10px;
+    margin: 5px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+#note-list li:hover {
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Vintage Feel */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://www.transparenttextures.com/patterns/aged-paper.png') repeat;
+    opacity: 0.3; /* Adds subtle paper texture */
+    z-index: -1;
+}
